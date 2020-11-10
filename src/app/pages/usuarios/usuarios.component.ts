@@ -99,6 +99,6 @@ export class UsuariosComponent implements OnInit {
     });
   }
   mostrarModal(id: string, foto: string){
-    this.modalUploadService.mostrarModal('usuarios', id, foto);
+    this.modalUploadService.mostrarModal('usuario', id, foto);
   }
 }

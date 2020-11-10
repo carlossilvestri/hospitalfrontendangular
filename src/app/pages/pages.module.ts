@@ -24,6 +24,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +42,9 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
         GraficoDonaComponent,
         UsuariosComponent,
         ModalUploadComponent,
+        HospitalesComponent,
+        MedicosComponent,
+        MedicoComponent,
     ],
     exports: [
         AccoutSettingsComponent,
@@ -53,6 +59,7 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
         GraficoDonaComponent,
         UsuariosComponent,
         ModalUploadComponent,
+        HospitalesComponent,
     ],
     imports: [
         BrowserModule,

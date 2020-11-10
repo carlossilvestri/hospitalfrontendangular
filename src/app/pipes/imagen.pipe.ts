@@ -7,7 +7,7 @@ import { URL_SERVICIOS } from '../config/config';
 export class ImagenPipe implements PipeTransform {
   transform(img: string, tipo: string = 'usuario'): any {
     let url = `${URL_SERVICIOS}/upload`;
-
+    // console.log(tipo);
     if (!img) {
       return url + '/usuarios/xxx'; // Trae el no-image del servidor.
     }
@@ -22,6 +22,9 @@ export class ImagenPipe implements PipeTransform {
       case 'medico':
         url += '/medicos/' + img;
         break;
+      case 'medicos':
+          url += '/medicos/' + img;
+          break;
       case 'hospital':
         url += '/hospitales/' + img;
         break;
@@ -30,6 +33,8 @@ export class ImagenPipe implements PipeTransform {
         url += '/usuarios/xxx';
         break;
     }
+    console.log('En el pipe');
+    console.log(url);
     return url;
   }
 }

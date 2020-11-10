@@ -16,6 +16,9 @@ export class ModalUploadService {
     this.tipo = null;
     this.id = null;
   }
+  /*
+  tipo: string medicos, usuarios, hospitales (Nombre de los directorios en el backend)
+  */
   mostrarModal(tipo: string, id: string, foto: string){
     this.oculto = '';
     this.tipo = tipo;

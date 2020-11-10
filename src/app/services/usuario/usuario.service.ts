@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 import { pipe } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 
@@ -129,7 +129,7 @@ export class UsuarioService {
     const url = `${URL_SERVICIOS}/usuario/${id}?token=${this.token}`;
     return this.http.delete(url)
             .pipe( map( resp => {
-              console.log(resp);
+              // console.log(resp);
               Swal.fire(
                 '¡Eliminado!',
                 'El usuario se ha eliminado correctamente.',

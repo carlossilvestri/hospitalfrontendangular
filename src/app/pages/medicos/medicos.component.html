@@ -1,0 +1,65 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input (keyup)="buscarMedico( input.value )" #input type="text" name="" id="" class="form-control" placeholder="Buscar medico">
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="cargando" class="row animated fadeIn">
+    <div class="col-sm-12">
+        <div class="alert alert-warning text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+<div *ngIf="!cargando" class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-right">
+                    <button (click)="crearMedico()" type="button" class="btn waves-effect waves-light btn-rounded bg-primary">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Crear Medico
+                    </button>
+                </div>
+                <h3 class="card-title">Médicos registrados <span class="badge badge-success">{{ medicoService.totalMedicos }}</span></h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Medico</th>
+                            <th>Hospital</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let medico of medicos; let i = index">
+                            <td>
+                                <img (click)="actualizarImagen( medico )" [src]="medico.img | imagen:'medico'" class="img-50 img-circle pointer" src="" alt="" srcset="">
+                            </td>
+                            <td>
+                                <p>{{ medico.nombre }}</p>
+                            </td>
+                            <td>
+                                <p>{{ medico.hospitalId.nombre }}</p>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary m-2" (click)="editarMedico(medico)">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn btn-danger m-2" (click)="borrarMedico(medico, i)">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

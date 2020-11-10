@@ -17,9 +17,7 @@ export class ModalUploadComponent implements OnInit {
     public subirArchivoService: SubirArchivoService,
     public modalUploadService: ModalUploadService,
     public usuarioService: UsuarioService
-  ) {
-    console.log('Modal listo');
-  }
+  ) {}
   ngOnInit(): void {}
   cerrarModal() {
     this.imagenTemp = null;
