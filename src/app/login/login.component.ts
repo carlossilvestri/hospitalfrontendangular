@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
     this.usuariosServies
       .login(usuario, forma.value.recuerdame)
       .subscribe((correcto) => {
+        console.log(correcto);
         window.location.href = '/dashboard';
       });
     console.log(forma.value);
